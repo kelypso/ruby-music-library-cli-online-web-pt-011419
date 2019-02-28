@@ -78,7 +78,7 @@ class MusicLibraryController
     input = gets.strip.to_i
     if input > 0 && input <= Song.all.length # user input is between 1 and the num of songs in the lib
       playlist = Song.all.sort{|a, b| a.name <=> b.name} 
-      song = playlist[input-1] # matches user input to array index
+      song = playlist[input-1] # sets song to match the correct index in playlist array
       puts "Playing #{song.name} by #{song.artist.name}"
     end
   end

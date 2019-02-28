@@ -18,7 +18,7 @@ class MusicLibraryController
       puts "To play a song, enter 'play song'."
       puts "To quit, type 'exit'."
       puts "What would you like to do?"
-      case input
+      case input # calls methods based on user input
          when "list songs"
            list_songs
          when "list artists"
@@ -33,5 +33,31 @@ class MusicLibraryController
            play_song
       end
     end
+  end
+  
+  def list_songs 
+    Song.all.sort{|a,b| a.name <=> b.name}.each_with_index do |song, i|
+      puts "#{i+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+  end
+  
+  def list_artists
+    
+  end
+
+  def list_genres
+    
+  end
+  
+  def list_songs_by_artist
+    
+  end
+  
+  def list_songs_by_genre
+    
+  end
+  
+  def play_song
+    
   end
 end
